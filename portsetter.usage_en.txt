@@ -1,0 +1,4 @@
+Usage: (-p or --port) [Number between 1 and 65000]
+-h,--help,-? for usage
+-v, --version for Version
+(-p,--port) -e [PORT] for port (no port defaults to PORT)

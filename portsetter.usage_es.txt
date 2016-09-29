@@ -1,0 +1,4 @@
+Uso: (-p o --port) [número entre 1 y 65000]
+-h, - help, -? para el uso
+-v, --version para la Versión
+(-p, - Puerto) -e [PORT] para el puerto (por defecto no hay un puerto a otro)
