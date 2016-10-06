@@ -21,13 +21,14 @@ const int MAX_PORT = 65000;
 //Will do all but print the usage in this project
 int main(int argc, char *args[])
 {
-
+	//If too many arguments
 	if (argc > 4) {
 		cout << "Error: Too many arguments" << endl;
 		usage();
 		cout << "Error Code: 1" << endl;
 		return 1;
 	}
+	//if no input
 	if(argc == 1){
 		cout << "No Input" << endl;
 		usage();
