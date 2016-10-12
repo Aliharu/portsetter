@@ -95,12 +95,12 @@ int main(int argc, char *args[])
     
     cout << endl << "Test -p --port 9" << endl;
     result = system("./portsetter.cpp.o -p --port 9")/256;
-    if (result != 1)  cout << "Test failed with error code " << result << endl;
+    if (result != 3)  cout << "Test failed with error code " << result << endl;
     else cout << "Test Successful" << endl;
     
     cout << endl << "Test -p 77 33" << endl;
     result = system("./portsetter.cpp.o -p 77 33")/256;
-    if (result != 1)  cout << "Test failed with error code " << result << endl;
+    if (result != 3)  cout << "Test failed with error code " << result << endl;
     else cout << "Test Successful" << endl;
     
     cout << endl << "Test -p -21" << endl;
