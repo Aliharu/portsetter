@@ -48,11 +48,17 @@ int main(int argc, char *args[])
 			about();
 			return 0;
 		}
-		else {
+		else if(flag == "-p" || flag == "--port") {
 			cout << "Error: Too few arguments" << endl;
 			usage();
 			cout << "Error Code: 2" << endl;
 			return 2;
+		}
+		else{
+			cout << "Incorrect Input" << endl;
+			usage();
+			cout << "Error Code: 3" << endl;
+			return 3;
 		}
 	}
 	string eflag = args[2];
@@ -78,7 +84,7 @@ int main(int argc, char *args[])
 		if(const char* env_p = std::getenv("PORT")) std::cout << "Your PATH is: " << env_p << '\n';
 		return 0;
 	}
-	if (flag != "-p" && flag != "--port" && flag != "-?" || port == 0){
+	if (flag != "-p" && flag != "--port" && flag != "-?"){
 		cout << "Error: Incorrect input" << endl;
 		usage();
 		cout << "Error Code: 3" << endl;

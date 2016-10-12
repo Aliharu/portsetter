@@ -69,17 +69,17 @@ int main(int argc, char *args[])
 
     cout << endl << "Test help" << endl;
     result = system("./portsetter.cpp.o -help ")/256;
-    if (result != 2)  cout << "Test failed with error code " << result << endl;
+    if (result != 3)  cout << "Test failed with error code " << result << endl;
     else cout << "Test Successful" << endl;
     
     cout << endl << "Test -help" << endl;
     result = system("./portsetter.cpp.o -help")/256;
-    if (result != 2)  cout << "Test failed with error code " << result << endl;
+    if (result != 3)  cout << "Test failed with error code " << result << endl;
     else cout << "Test Successful" << endl;
     
     cout << endl << "Test --h" << endl;
     result = system("./portsetter.cpp.o --h ")/256;
-    if (result != 2)  cout << "Test failed with error code " << result << endl;
+    if (result != 3)  cout << "Test failed with error code " << result << endl;
     else cout << "Test Successful" << endl;
     
     cout << endl << "Test -h --help" << endl;
@@ -90,7 +90,7 @@ int main(int argc, char *args[])
     
     cout << endl << "Test -hs" << endl;
     result = system("./portsetter.cpp.o -hs ")/256;
-    if (result != 2)  cout << "Test failed with error code " << result << endl;
+    if (result != 3)  cout << "Test failed with error code " << result << endl;
     else cout << "Test Successful" << endl;
     
     cout << endl << "Test -p --port 9" << endl;
@@ -110,7 +110,7 @@ int main(int argc, char *args[])
     
     cout << endl << "Test -p 0" << endl;
     result = system("./portsetter.cpp.o -p 0")/256;
-    if (result != 3)  cout << "Test failed with error code " << result << endl;
+    if (result != 4)  cout << "Test failed with error code " << result << endl;
     else cout << "Test Successful" << endl;
     
     cout << endl << "Test --port" << endl;
