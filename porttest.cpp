@@ -42,6 +42,21 @@ int main(int argc, char *args[])
     if (result != 0)  cout << "Test failed with error code " << result << endl;
     else cout << "Test Successful" << endl;
     
+    cout << endl << "Test -p --environment" << endl;
+    result = system("./portsetter.cpp.o -p --environment")/256;
+    if (result != 0)  cout << "Test failed with error code " << result << endl;
+    else cout << "Test Successful" << endl;
+    
+    cout << endl << "Test -p --environment BAR" << endl;
+    result = system("export BAR=5116 && ./portsetter.cpp.o -p --environment BAR")/256;
+    if (result != 0)  cout << "Test failed with error code " << result << endl;
+    else cout << "Test Successful" << endl;
+    
+    cout << endl << "Test --port --environment BAR" << endl;
+    result = system("export BAR=5116 && ./portsetter.cpp.o --port --environment BAR")/256;
+    if (result != 0)  cout << "Test failed with error code " << result << endl;
+    else cout << "Test Successful" << endl;
+    
     cout << endl << "Test -?" << endl;
     result = system("./portsetter.cpp.o -?")/256;
     if (result != 0)  cout << "Test failed with error code " << result << endl;
@@ -136,6 +151,16 @@ int main(int argc, char *args[])
     cout << endl << "Test -p -e junk" << endl;
     result = system("./portsetter.cpp.o -P 714")/256;
     if (result != 3)  cout << "Test failed with error code " << result << endl;
+    else cout << "Test Successful" << endl;
+    
+    cout << endl << "Test --port --environment JUNK" << endl;
+    result = system("./portsetter.cpp.o --port --environment JUNK")/256;
+    if (result != 1)  cout << "Test failed with error code " << result << endl;
+    else cout << "Test Successful" << endl;
+    
+    cout << endl << "Test -p --environment JUNK" << endl;
+    result = system("./portsetter.cpp.o -p --environment JUNK")/256;
+    if (result != 1)  cout << "Test failed with error code " << result << endl;
     else cout << "Test Successful" << endl;
 
     
