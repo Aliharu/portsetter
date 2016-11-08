@@ -13,4 +13,10 @@ Open the .bash_aliases file
 
 Supported Languages: English and Spanish
 
+---
+##Recent Changes
+Added support for command
+> setport -p --environment [PORT_VAR]
+> setport --port --environment [PORT_VAR]
 
+where PORT_VAR is the name of the envar that the port number is listed on.
