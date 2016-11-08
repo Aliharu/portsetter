@@ -64,10 +64,18 @@ int main(int argc, char *args[])
 	string eflag = args[2];
 	if(argc == 4){
 		if(flag == "-p" || flag == "--port"){
-			if(eflag == "-e"){
+			if(eflag == "-e" || eflag =="--environment"){
 				char* port = args[3];
-				if(const char* env_p = std::getenv(port)) std::cout << "Your PATH is: " << env_p << '\n';
-				return 0;
+				if(const char* env_p = std::getenv(port)){
+					std::cout << "Your PATH is: " << env_p << '\n';
+					return 0;
+				}
+				else
+				{
+					std::cout << "Error: envar not found" << endl;
+					usage();
+					return 1;//TODO: place new error in usage.
+				}
 			}
 			cout << "Error: Incorrect input" << endl;
 			usage();
@@ -80,7 +88,7 @@ int main(int argc, char *args[])
 		return 1;
 		}
 	int port = atoi(args[2]);
-	if((flag == "-p" || flag == "--port") && eflag == "-e"){
+	if((flag == "-p" || flag == "--port") && (eflag == "-e" || eflag =="--environment")){
 		if(const char* env_p = std::getenv("PORT")) std::cout << "Your PATH is: " << env_p << '\n';
 		return 0;
 	}
